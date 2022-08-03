@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+
+body {
+  display: flex;
+  background: linear-gradient(45deg, #ff4545, #ffbe41);
+  color: rgb(97, 82, 82);
+  font-family: "Arial";
+  align-items: center;
+  justify-content: center;
+}
+
+
+h1 {
+  color:azure
+}
+
+h3 {
+  color:azure
+}
+
+.headBoard {
+  background:linear-gradient(45deg, #ce0b0b, #e2970b);
+  color: blanchedalmond;
+}
+
+table, th, td{
+  padding: 1rem;
+  border: 1px solid black;
+}
+
+.danger{
+  border:#ce0b0b solid 2px;
+}

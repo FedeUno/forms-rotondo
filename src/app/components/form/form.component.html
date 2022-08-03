@@ -1,0 +1,59 @@
+<h1>Reactive Form</h1>
+
+<form [formGroup]="contactForm" (ngSubmit)="sendContact()">
+
+  <label for="">Name: </label>
+  <input type="text" formControlName="name">
+  <p *ngIf="contactForm.get('name')?.errors?.['required']">This field is required</p>
+  <p *ngIf="contactForm.get('name')?.errors?.['pattern']">This field can only contain letters</p>
+  <br> <br>
+
+  <label for="">Lastname: </label>
+  <input
+    type="text" 
+    formControlName="lastname"
+  >
+  <p *ngIf="contactForm.get('lastname')?.errors?.['required']">This field is required</p>
+  <br> <br>
+  <p *ngIf="contactForm.get('lastname')?.errors?.['pattern']">This field can only contain letters</p>
+  <br> <br>
+
+  <label for="">Note: </label>
+  <input type="text" formControlName="note">
+  <p *ngIf="contactForm.get('note')?.errors?.['required']">This field is required</p>
+  <p *ngIf="contactForm.get('note')?.errors?.['pattern']">This field can only contain two numbers</p>
+  <br> <br>
+
+
+  <label for="">Email: </label>
+  <input type="text" formControlName="email">
+  <p *ngIf="contactForm.get('email')?.errors?.['required']">This field is required</p>
+  <br> <br>
+  <p *ngIf="contactForm.get('email')?.errors?.['pattern']">Must be email format</p>
+  <br>
+
+ 
+
+  <button type="submit" [disabled]="!contactForm.valid">SEND</button>
+</form>
+
+<br><br>
+
+<h1>Student List</h1>
+
+<table >
+  <tr class="headBoard">
+    <th>Number</th>
+    <th>Name</th>
+    <th>Lastname</th>
+    <th>Note</th>
+    <th>Email</th> 
+  </tr>
+  <tr *ngFor="let student of students; let i = index">
+    <th>{{i + 1}}  </th>
+    <th> {{student.name}}</th>
+    <th>{{student.lastname}}   </th>
+    <th> {{student.note}}  </th> 
+    <th> {{student.email}}  </th> 
+  </tr>
+</table>
